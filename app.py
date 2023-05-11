@@ -60,12 +60,11 @@ proba_df.columns = ['Crop', 'Probability']
 proba_df = proba_df.sort_values(by='Probability', ascending=True)
 
 # Create a horizontal bar chart with the probabilities
-st.markdown("The most suitable crop to grow are (in Ascending order): ")
 fig, ax = plt.subplots()
 ax.barh(proba_df['Crop'], proba_df['Probability'])
 ax.set_xlabel('Probability')
 ax.set_ylabel('Crop')
-ax.set_title('Most suitable Crops for your land are')
+ax.set_title('Most suitable Crops for your land are (in ascending order)')
 
 # Display the bar chart in the main app
 st.pyplot(fig)
