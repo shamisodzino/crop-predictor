@@ -1,6 +1,6 @@
 # To find the Best performing model, I followed the following strategies:
 
-1. **Tune hyperparameters:** Many Modles have many hyperparameters that can be tuned to improve model performance. Some important hyperparameters to consider include the learning rate, the maximum depth of each tree, the number of trees in the ensemble, and the regularization parameters. You can use techniques like grid search or randomized search to find the best combination of hyperparameters.
+1. **Tune hyperparameters:** Many Models have many hyperparameters that can be tuned to improve model performance. Some important hyperparameters to consider include the learning rate, the maximum depth of each tree, the number of trees in the ensemble, and the regularization parameters. You can use techniques like grid search or randomized search to find the best combination of hyperparameters.
 
 2. **Feature engineering:** Feature engineering can involve creating new features from the existing data, scaling or normalizing the features, or removing irrelevant or redundant features. Feature engineering can help the model to better capture patterns in the data and improve its accuracy.
 
