@@ -9,6 +9,28 @@ with open("random_forest_classifier.pkl", "rb") as f:
 
 # Define the app layout
 st.title("Crop Prediction App")
+# Add glossary section
+st.header("Glossary")
+
+# Define the glossary terms and their explanations
+glossary = {
+    "kg/ha": "Kilograms per hectare, a unit of measurement for fertilizer application rate",
+    "mg/kg": "Milligrams per kilogram, a unit of measurement for soil nutrient concentration",
+    "pH": "A measure of the acidity or alkalinity of the soil",
+    "C": "Degrees Celsius, a unit of measurement for temperature",
+    "mm": "Millimeters, a unit of measurement for rainfall",
+    "Cu": "Copper, a micronutrient essential for plant growth",
+    "K": "Potassium, a macronutrient essential for plant growth and development",
+    "P": "Phosphorus, a macronutrient essential for plant growth and development",
+    "N": "Nitrogen, a macronutrient essential for plant growth and development",
+    "Mn": "Manganese, a micronutrient essential for plant growth"
+}
+
+# Display the glossary terms and their explanations
+for term, definition in glossary.items():
+    st.write(f"**{term}:** {definition}")
+
+st.markdown("This Crop Recommendation App is a machine learning-powered web application that helps farmers and agronomists make informed decisions on which crops to grow based on specific soil and environmental conditions. The app takes input parameters such as rainfall, temperature, soil pH, and nutrient levels, and predicts the most suitable crops")
 
 # Create a sidebar header and markdown text
 st.sidebar.header("Input Parameters")
@@ -20,9 +42,9 @@ def user_input_features():
     Rainfall = st.sidebar.number_input("Rainfall (mm)", 0, 2500, 800)
     Temp = st.sidebar.number_input("Temperature (°C)", 0, 50, 25)
     pH = st.sidebar.number_input("Soil pH", 0.0, 14.0, 7.0)
-    N = st.sidebar.number_input("Nitrogen (N) (mg/kg)", 0, 1000, 120)
-    P = st.sidebar.number_input("Phosphorus (P) (mg/kg)", 0, 1000, 20)
-    K = st.sidebar.number_input("Potassium (K) (mg/kg)", 0, 1000, 300)
+    N = st.sidebar.number_input("Nitrogen (N) (kg/ha)", 0, 1000, 120)
+    P = st.sidebar.number_input("Phosphorus (P) (kg/ha)", 0, 1000, 20)
+    K = st.sidebar.number_input("Potassium (K) (kg/ha)", 1, 1000, 300)
     Mn = st.sidebar.number_input("Manganese (Mn) (mg/kg)", 0, 1000, 20)
     Zn = st.sidebar.number_input("Zinc (Zn) (mg/kg)", 0, 1000, 8)
     Cu = st.sidebar.number_input("Copper (Cu) (mg/kg)", 0, 1000, 2)
@@ -68,5 +90,3 @@ ax.set_title('Most suitable Crops for your land are (in ascending order):')
 
 # Display the bar chart in the main app
 st.pyplot(fig)
-
-st.markdown("This Crop Recommendation App is a machine learning-powered web application that helps farmers and agronomists make informed decisions on which crops to grow based on specific soil and environmental conditions. The app takes input parameters such as rainfall, temperature, soil pH, and nutrient levels, and predicts the most suitable crops")
