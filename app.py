@@ -65,7 +65,7 @@ fig, ax = plt.subplots()
 ax.barh(proba_df['Crop'], proba_df['Probability'])
 ax.set_xlabel('Probability')
 ax.set_ylabel('Crop')
-ax.set_title('Predicted Crop Probabilities')
+ax.set_title('Most suitable Crops for your land are')
 
 # Display the bar chart in the main app
 st.pyplot(fig)
