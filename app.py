@@ -68,3 +68,5 @@ ax.set_title('Most suitable Crops for your land are (in ascending order):')
 
 # Display the bar chart in the main app
 st.pyplot(fig)
+
+st.markdown("This Crop Recommendation App is a machine learning-powered web application that helps farmers and agronomists make informed decisions on which crops to grow based on specific soil and environmental conditions. The app takes input parameters such as rainfall, temperature, soil pH, and nutrient levels, and predicts the most suitable crops")
