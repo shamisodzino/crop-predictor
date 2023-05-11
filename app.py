@@ -9,28 +9,6 @@ with open("random_forest_classifier.pkl", "rb") as f:
 
 # Define the app layout
 st.title("Crop Prediction App")
-# Add glossary section
-st.header("Glossary")
-
-# Define the glossary terms and their explanations
-glossary = {
-    "kg/ha": "Kilograms per hectare, a unit of measurement for fertilizer application rate",
-    "mg/kg": "Milligrams per kilogram, a unit of measurement for soil nutrient concentration",
-    "pH": "A measure of the acidity or alkalinity of the soil",
-    "C": "Degrees Celsius, a unit of measurement for temperature",
-    "mm": "Millimeters, a unit of measurement for rainfall",
-    "Cu": "Copper, a micronutrient essential for plant growth",
-    "K": "Potassium, a macronutrient essential for plant growth and development",
-    "P": "Phosphorus, a macronutrient essential for plant growth and development",
-    "N": "Nitrogen, a macronutrient essential for plant growth and development",
-    "Mn": "Manganese, a micronutrient essential for plant growth"
-}
-
-# Display the glossary terms and their explanations
-for term, definition in glossary.items():
-    st.write(f"**{term}:** {definition}")
-
-st.markdown("This Crop Recommendation App is a machine learning-powered web application that helps farmers and agronomists make informed decisions on which crops to grow based on specific soil and environmental conditions. The app takes input parameters such as rainfall, temperature, soil pH, and nutrient levels, and predicts the most suitable crops")
 
 # Create a sidebar header and markdown text
 st.sidebar.header("Input Parameters")
@@ -90,3 +68,28 @@ ax.set_title('Most suitable Crops for your land are (in ascending order):')
 
 # Display the bar chart in the main app
 st.pyplot(fig)
+# Add glossary section
+
+st.header("About")
+
+st.markdown("This Crop Recommendation App is a machine learning-powered web application that helps farmers and agronomists make informed decisions on which crops to grow based on specific soil and environmental conditions. The app takes input parameters such as rainfall, temperature, soil pH, and nutrient levels, and predicts the most suitable crops")
+st.header("Glossary")
+
+# Define the glossary terms and their explanations
+glossary = {
+    "kg/ha": "Kilograms per hectare, a unit of measurement for fertilizer application rate",
+    "mg/kg": "Milligrams per kilogram, a unit of measurement for soil nutrient concentration",
+    "pH": "A measure of the acidity or alkalinity of the soil",
+    "C": "Degrees Celsius, a unit of measurement for temperature",
+    "mm": "Millimeters, a unit of measurement for rainfall",
+    "Cu": "Copper, a micronutrient essential for plant growth",
+    "K": "Potassium, a macronutrient essential for plant growth and development",
+    "P": "Phosphorus, a macronutrient essential for plant growth and development",
+    "N": "Nitrogen, a macronutrient essential for plant growth and development",
+    "Mn": "Manganese, a micronutrient essential for plant growth"
+}
+
+# Display the glossary terms and their explanations
+for term, definition in glossary.items():
+    st.write(f"**{term}:** {definition}")
+
